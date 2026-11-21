@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding Buddy System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <span class="sidebar__logo-icon">🤝</span>
+      <span class="sidebar__logo-text">Buddy</span>
+    </div>
+
+    <nav class="sidebar__nav">
+      <a href="#home"      class="nav-item active" data-section="home">
+        <span class="nav-item__icon">🏠</span> Home
+      </a>
+      <a href="#checklist" class="nav-item" data-section="checklist">
+        <span class="nav-item__icon">✅</span> Checklist
+      </a>
+      <a href="#ask-buddy" class="nav-item" data-section="ask-buddy">
+        <span class="nav-item__icon">💬</span> Ask Buddy
+      </a>
+      <a href="#team"      class="nav-item" data-section="team">
+        <span class="nav-item__icon">👥</span> Team Directory
+      </a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <span>v1.0 · 2026</span>
+    </div>
+  </aside>
+
+  <!-- ===================== MOBILE HEADER ===================== -->
+  <header class="mobile-header">
+    <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+    <span class="mobile-header__title">Onboarding Buddy</span>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main-content">
+
+    <!-- ---------- HOME SECTION ---------- -->
+    <section class="section active" id="home">
+      <h2 class="section__heading">Welcome 👋</h2>
+
+      <!-- Welcome Card -->
+      <div class="card welcome-card">
+        <div class="welcome-card__avatar">JD</div>
+        <div class="welcome-card__info">
+          <h3 class="welcome-card__name">Jane Doe</h3>
+          <p class="welcome-card__role">Junior Software Engineer · Engineering Team</p>
+          <p class="welcome-card__message">
+            We're thrilled to have you on board! Your first-week buddy is <strong>Alex Rivera</strong>.
+            Explore the sidebar to get started with your onboarding journey.
+          </p>
+        </div>
+        <div class="welcome-card__badge">Day 1</div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-card__value" id="stat-done">0</span>
+          <span class="stat-card__label">Tasks Done</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__value" id="stat-left">7</span>
+          <span class="stat-card__label">Tasks Left</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__value">4</span>
+          <span class="stat-card__label">Team Members</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- CHECKLIST SECTION ---------- -->
+    <section class="section" id="checklist">
+      <h2 class="section__heading">7-Day Onboarding Checklist</h2>
+
+      <!-- Progress Bar -->
+      <div class="progress-wrap">
+        <div class="progress-wrap__labels">
+          <span>Progress</span>
+          <span id="progress-label">0 / 7</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="7">
+          <div class="progress-bar__fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Task List -->
+      <div class="card checklist-card">
+        <ul class="task-list" id="task-list">
+          <!-- Day 1 -->
+          <li class="task-item" data-day="1">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 1</span>
+              <span class="task-text">Complete HR paperwork &amp; sign contracts</span>
+            </label>
+          </li>
+          <!-- Day 2 -->
+          <li class="task-item" data-day="2">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 2</span>
+              <span class="task-text">Set up laptop, IDE, and development environment</span>
+            </label>
+          </li>
+          <!-- Day 3 -->
+          <li class="task-item" data-day="3">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 3</span>
+              <span class="task-text">Meet the team &amp; attend welcome lunch</span>
+            </label>
+          </li>
+          <!-- Day 4 -->
+          <li class="task-item" data-day="4">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 4</span>
+              <span class="task-text">Review codebase, architecture docs, and Git workflow</span>
+            </label>
+          </li>
+          <!-- Day 5 -->
+          <li class="task-item" data-day="5">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 5</span>
+              <span class="task-text">Complete security &amp; compliance training</span>
+            </label>
+          </li>
+          <!-- Day 6 -->
+          <li class="task-item" data-day="6">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 6</span>
+              <span class="task-text">Shadow a senior engineer on a live task</span>
+            </label>
+          </li>
+          <!-- Day 7 -->
+          <li class="task-item" data-day="7">
+            <label class="task-label">
+              <input type="checkbox" class="task-checkbox" />
+              <span class="task-day-badge">Day 7</span>
+              <span class="task-text">1-on-1 check-in with your manager &amp; set 30-day goals</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ---------- ASK BUDDY SECTION ---------- -->
+    <section class="section" id="ask-buddy">
+      <h2 class="section__heading">Ask Buddy 💬</h2>
+
+      <div class="card chat-card">
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chat-messages">
+          <div class="chat-bubble chat-bubble--buddy">
+            Hi there! I'm your Onboarding Buddy 🤖. Ask me anything about company policies,
+            tools, or your first week. Try: <em>"What is the leave policy?"</em>
+          </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-row">
+          <input
+            type="text"
+            id="chat-input"
+            class="chat-input"
+            placeholder="Type your question and press Enter…"
+            autocomplete="off"
+          />
+          <button class="chat-send-btn" id="chat-send" aria-label="Send">Send</button>
+        </div>
+
+        <!-- FAQ Chips -->
+        <div class="faq-chips">
+          <span class="faq-chip" data-question="What is the leave policy?">Leave policy</span>
+          <span class="faq-chip" data-question="How do I connect to WiFi?">WiFi access</span>
+          <span class="faq-chip" data-question="Who do I contact for IT support?">IT support</span>
+          <span class="faq-chip" data-question="What tools does the team use?">Team tools</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------- TEAM DIRECTORY SECTION ---------- -->
+    <section class="section" id="team">
+      <h2 class="section__heading">Team Directory 👥</h2>
+
+      <div class="team-grid">
+
+        <div class="card member-card">
+          <div class="member-card__avatar" style="--avatar-color: #0A7C6E;">AR</div>
+          <h3 class="member-card__name">Alex Rivera</h3>
+          <p class="member-card__role">Senior Software Engineer</p>
+          <p class="member-card__tag">Your Onboarding Buddy</p>
+          <a class="member-card__contact" href="mailto:alex.rivera@company.com">alex.rivera@company.com</a>
+        </div>
+
+        <div class="card member-card">
+          <div class="member-card__avatar" style="--avatar-color: #7C3AED;">SP</div>
+          <h3 class="member-card__name">Sarah Park</h3>
+          <p class="member-card__role">Engineering Manager</p>
+          <p class="member-card__tag">Your Direct Manager</p>
+          <a class="member-card__contact" href="mailto:sarah.park@company.com">sarah.park@company.com</a>
+        </div>
+
+        <div class="card member-card">
+          <div class="member-card__avatar" style="--avatar-color: #F59E0B;">MK</div>
+          <h3 class="member-card__name">Marcus Kim</h3>
+          <p class="member-card__role">IT Support Specialist</p>
+          <p class="member-card__tag">Tech Help &amp; Equipment</p>
+          <a class="member-card__contact" href="mailto:marcus.kim@company.com">marcus.kim@company.com</a>
+        </div>
+
+        <div class="card member-card">
+          <div class="member-card__avatar" style="--avatar-color: #DC2626;">LT</div>
+          <h3 class="member-card__name">Laura Torres</h3>
+          <p class="member-card__role">HR Business Partner</p>
+          <p class="member-card__tag">People &amp; Culture</p>
+          <a class="member-card__contact" href="mailto:laura.torres@company.com">laura.torres@company.com</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    /* ---- Sidebar Navigation ---- */
+    const navItems   = document.querySelectorAll('.nav-item');
+    const sections   = document.querySelectorAll('.section');
+    const sidebar    = document.getElementById('sidebar');
+    const hamburger  = document.getElementById('hamburger');
+
+    function activateSection(id) {
+      sections.forEach(s  => s.classList.remove('active'));
+      navItems.forEach(n  => n.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) target.classList.add('active');
+      const navMatch = document.querySelector(`.nav-item[data-section="${id}"]`);
+      if (navMatch) navMatch.classList.add('active');
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        activateSection(item.dataset.section);
+        sidebar.classList.remove('sidebar--open'); // close on mobile
+      });
+    });
+
+    hamburger.addEventListener('click', () => sidebar.classList.toggle('sidebar--open'));
+
+    /* ---- Checklist & Progress Bar ---- */
+    const checkboxes    = document.querySelectorAll('.task-checkbox');
+    const progressFill  = document.getElementById('progress-fill');
+    const progressLabel = document.getElementById('progress-label');
+    const statDone      = document.getElementById('stat-done');
+    const statLeft      = document.getElementById('stat-left');
+    const TOTAL         = checkboxes.length;
+
+    function updateProgress() {
+      const done = document.querySelectorAll('.task-checkbox:checked').length;
+      const pct  = Math.round((done / TOTAL) * 100);
+      progressFill.style.width         = pct + '%';
+      progressFill.setAttribute('aria-valuenow', done);
+      progressLabel.textContent         = `${done} / ${TOTAL}`;
+      statDone.textContent              = done;
+      statLeft.textContent              = TOTAL - done;
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        cb.closest('.task-item').classList.toggle('task-item--done', cb.checked);
+        updateProgress();
+      });
+    });
+
+    /* ---- Ask Buddy Chat ---- */
+    const FAQ = {
+      "what is the leave policy":
+        "You receive 15 days of paid annual leave, 10 sick days, and all public holidays. Leave requests are submitted via the HR portal (hr.company.com) at least 2 weeks in advance.",
+      "how do i connect to wifi":
+        "Connect to the network <strong>Company_Secure</strong>. The password is on your welcome letter. For guest access use <strong>Company_Guest</strong> (no password needed). IT can help if you have issues.",
+      "who do i contact for it support":
+        "Contact <strong>Marcus Kim</strong> at marcus.kim@company.com or raise a ticket at support.company.com. For urgent issues call ext. <strong>1234</strong>. Response SLA is 4 business hours.",
+      "what tools does the team use":
+        "We use <strong>GitHub</strong> for code, <strong>Jira</strong> for project tracking, <strong>Slack</strong> for communication, <strong>Confluence</strong> for docs, and <strong>Figma</strong> for design. Credentials will be emailed by IT on Day 1."
+    };
+
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput    = document.getElementById('chat-input');
+    const chatSend     = document.getElementById('chat-send');
+    const faqChips     = document.querySelectorAll('.faq-chip');
+
+    function appendBubble(text, type) {
+      const bubble = document.createElement('div');
+      bubble.className = `chat-bubble chat-bubble--${type}`;
+      bubble.innerHTML = text;
+      chatMessages.appendChild(bubble);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getBuddyReply(question) {
+      const key = question.toLowerCase().trim().replace(/[?!.]/g, '');
+      for (const [pattern, answer] of Object.entries(FAQ)) {
+        if (key.includes(pattern.split(' ').slice(0, 3).join(' ')) || key === pattern) {
+          return answer;
+        }
+      }
+      return "I don't have an answer for that yet, but you can ask your manager <strong>Sarah Park</strong> or check Confluence for more details.";
+    }
+
+    function handleSend() {
+      const text = chatInput.value.trim();
+      if (!text) return;
+      appendBubble(text, 'user');
+      chatInput.value = '';
+      setTimeout(() => appendBubble(getBuddyReply(text), 'buddy'), 500);
+    }
+
+    chatSend.addEventListener('click', handleSend);
+    chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') handleSend(); });
+
+    faqChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chatInput.value = chip.dataset.question;
+        handleSend();
+      });
+    });
+  </script>
+
+</body>
+</html>
